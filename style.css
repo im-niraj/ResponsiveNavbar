@@ -1,0 +1,234 @@
+body,p,span{
+    margin: 0;
+    padding: 0;
+    font-family: "poppins";
+}
+.navbar{
+    background-color: rgb(74, 44, 203);
+    height: 50px;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+}
+
+.navbar-inner{
+    display: flex;
+    justify-content: space-between;
+    padding: 0 50px;
+    align-items: center;
+    width: 100%;
+}
+
+.navmenu{
+    position: relative;
+}
+
+#checkBoxMenu, #labelMenu{
+    display: none;
+}
+#labelMenu::after{
+    font-family: "Font Awesome 5 Free"; 
+    font-weight: 900; 
+    margin-left: 8px;
+    content: "\f0c9 ";
+    cursor: pointer;
+}
+
+.menuBar>#portraitMenu{
+    position: absolute;
+    border-bottom: 2px solid rgb(247, 245, 245);
+    background-color: rgb(246, 246, 246);
+    height: fit-content;
+    width: 100%;
+    left: 0;
+    margin-top: 7px;
+    font-size: 19px;
+    color: #000;
+    user-select: none;
+}
+#portraitMenu{
+    display: none;
+}
+#checkBoxMenu:checked ~ #portraitMenu{
+    display: block;
+}
+#checkBoxMenu:checked ~ #labelMenu::after{
+    font-family: "Font Awesome 5 Free"; 
+    font-weight: 900; 
+    margin-left: 8px;
+    padding: 3px;
+    content: "\f00d ";
+    cursor: pointer;
+}
+
+.menuBar>#portraitMenu > .navmenu-2{
+    margin: 20px;
+    display: flex;
+    flex-direction: column;
+}
+.menuBar>#portraitMenu > .navmenu-2>p{
+    padding: 5px 10px;
+}
+.menuBar>#portraitMenu > .navmenu-2>p::after{
+    font-family: "Font Awesome 5 Free"; 
+    font-weight: 900; 
+    margin-left: 8px;
+    content: "\f078";
+}
+.menuBar>#portraitMenu > .navmenu-2 > .selectMenu-2{
+    margin-left: 30px;
+    padding-bottom: 10px;
+    list-style: none;
+    color: rgb(55, 39, 203);
+    cursor: pointer;
+}
+.menuBar>#portraitMenu > .navmenu-2 > .selectMenu-2 > li{
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+.menuBar>#portraitMenu > .navmenu-2 > .selectMenu-2 > li:hover{
+    background-color: rgb(236, 232, 232);
+}
+.menuBar>#portraitMenu > .navmenu-2 > a{
+    color: black;
+    text-decoration: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+.menuBar>#portraitMenu > .navmenu-2 > a:hover{
+    background-color: rgb(236, 232, 232);
+}
+
+.navbar-inner > :nth-child(1){
+    font-size: 24px;
+    font-weight: 600;
+    color: rgb(192, 251, 12);
+    text-shadow: 0 0 10px #fff,0 0 30px #fff,0 0 50px #fff;
+}
+
+.navbar-inner > :nth-child(2) a{
+    text-decoration: none;
+    padding: 5px 30px;
+    color: #fff;
+    font-weight: 600;
+    border-radius: 15px;
+    
+}
+
+
+
+#labelDropDown{
+    padding: 5px 30px;
+    color: #fff;
+    font-weight: 600;
+    border-radius: 15px;
+    user-select: none;
+    cursor: pointer;
+}
+.navbar-inner > :nth-child(2) a:hover{
+    background-color: yellow;
+    color: rgb(74, 44, 203);
+}
+#labelDropDown:hover{
+    background-color: yellow;
+    color: rgb(74, 44, 203);
+}
+
+#labelDropDown::after{
+    font-family: "Font Awesome 5 Free"; 
+    font-weight: 900; 
+    content: "\f077";
+    margin-left: 8px;
+    /* transition: 0.9s; */
+}
+#checkBox {display: none}
+#checkBox:checked ~ .selectMenu{
+    display: block;
+}
+#checkBox:checked ~ #labelDropDown::after{
+    font-family: "Font Awesome 5 Free"; 
+    font-weight: 900; 
+    content: "\f078";
+    margin-left: 8px;
+    
+}
+#checkBox:checked ~ #labelDropDown{
+    background-color: yellow;
+    color: rgb(74, 44, 203);
+}
+.navbar-inner > :nth-child(3){
+    padding: 7px 15px;
+    border: 1px solid white;
+    border-radius: 5px;
+    cursor: pointer;
+    color: #fff;
+    font-weight: 500;
+}
+.navbar-inner > :nth-child(3):hover{
+    background-color: #fff;
+    color: rgb(74, 44, 203);
+}
+
+.selectMenu{
+    display: none;
+    box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+    border-radius: 7px;
+    position: absolute;
+    margin-top: 15px;
+    width: 200px;
+    padding: 15px;
+    user-select: none;
+}
+
+.selectMenu li{
+    cursor: pointer;
+    list-style: none;
+    padding: 5px;
+    border-bottom: 1px solid rgb(236, 232, 232);;
+}
+.selectMenu li:last-child{
+    border-bottom: none;
+}
+.selectMenu li:hover{
+    background-color: rgb(236, 232, 232);
+}
+
+.menuBar{
+    display: none;
+    color: #fff;
+    font-size: 25px;
+}
+footer{
+    position: absolute;
+    bottom: 0;
+    background-color: rgb(251, 116, 116);
+    width: 100%;
+    padding:20px 0;
+    text-align: center;
+    color: #fff;
+    font-size: 20px;
+    text-transform: capitalize;
+    right: 0;
+}
+
+
+/* media query */
+
+@media all and  (max-width: 950px){
+    .navbar{
+        padding: 0 10px;
+    }
+    .navbar-inner{
+        width: 100%;
+        padding: 0 10px;
+    }
+    #labelMenu{
+        display: block;
+    }
+    .navmenu{
+        display: none;
+    }
+    .menuBar{
+        display: block;
+    }
+}
